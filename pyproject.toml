@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vectorization"
+description = "A TDA vectorization Package"
+version = "1.0.0"
+license = ""
+authors = [
+    { name = "_", email = "epaluzo@us.es" },
+    { email = "msoriano4@us.es" },
+    { name = "Abhinav Natarajan", email = "natarajan@maths.ox.ac.uk"}
+]
+dependencies = [
+    "scikit-learn==1.3.1",
+    "scikit-tda==1.0.0",
+    "matplotlib==3.8.0",
+    "gudhi==3.8.0",
+    "numpy==1.26.0",
+    "teaspoon==1.4.3"
+]
+
+[project.urls]
+Homepage = "https://github.com/abhinavnatarajan/vectorization-maps"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/vectorization",
+]
