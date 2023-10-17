@@ -161,7 +161,27 @@ def GetPersSilhouetteFeature(barcode, res=100, w=1):
 
     return feature_vector
 
-def GetPersStats(barcode,app=False,*p):
+def PersStatsNames(app = False):
+    stats = [
+        "avg",
+        "std",
+        "med",
+        "iqr",
+        "ran",
+        "perc10",
+        "perc25",
+        "perc75",
+        "perc90",
+    ]
+    if app:
+        result1 = [f"{stat}_{var}" for stat in stats for var in ["b", "d"]]
+        result2 = [f"{stat}_{var}" for var in ["mid", "len"] for stat in stats]
+        return result1 + result2
+    else:
+        vars = ["b", "d", "mid", "len"]
+        return [f"{stat}_{var}" for var in vars for stat in stats]
+    
+def GetPersStats(barcode, app=False):
     barcode = bar_cleaner(barcode)
     if (np.size(barcode) > 0):
         # Average of Birth and Death of the barcode
