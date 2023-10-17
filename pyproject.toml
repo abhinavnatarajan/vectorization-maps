@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "vectorization"
 description = "A TDA vectorization Package"
-version = "1.0.0"
+version = "1.0.1"
 license = ""
 authors = [
     { name = "_", email = "epaluzo@us.es" },
